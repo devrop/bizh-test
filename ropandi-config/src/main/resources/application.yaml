@@ -1,0 +1,13 @@
+server:
+  port: 5000
+
+spring:
+  cloud:
+    config:
+      name: config
+      server:
+        git:
+          uri: https://github.com/devrop/biz-demo
+          search-paths: config-files*
+  application:
+    name: config
