@@ -7,7 +7,7 @@ spring:
       name: config
       server:
         git:
-          uri: https://github.com/devrop/biz-demo
+          uri: https://github.com/devrop/bizh-test
           search-paths: config-files*
   application:
     name: config

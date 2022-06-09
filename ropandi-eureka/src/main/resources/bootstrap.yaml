@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:5000
-      label: main
+      label: master
       fail-fast: true
       retry:
         initial-interval: 4000
