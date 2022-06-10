@@ -1,17 +1,16 @@
-package ropandi.gateway;
+package ropandi.box;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-
 @EnableZuulProxy
 @EnableEurekaClient
 @SpringBootApplication
-public class RopandiGatewayApplication {
+public class RopandiBoxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RopandiGatewayApplication.class, args);
+		SpringApplication.run(RopandiBoxApplication.class, args);
 	}
 
 }

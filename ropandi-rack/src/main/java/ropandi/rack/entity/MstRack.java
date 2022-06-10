@@ -1,7 +1,8 @@
-package ropandi.slot.entity;
+package ropandi.rack.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,25 +16,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "mstslot")
+@Table(name = "mstrack")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Setter
 @Getter
-public class MstSlot implements Serializable {
-
-	/**
+public class MstRack implements Serializable {/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long slotCode;
-	private String slotName;
-	private Long boxCode;
+	@Column(name="rack_code")
 	private Long rackCode;
-	private Long slotCapacity;
-	private Long usedQty;
+	@Column(name="rack_name")
+	private String rackName;
 	
+	
+	
+
 }

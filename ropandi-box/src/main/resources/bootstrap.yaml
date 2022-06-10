@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway
+    name: boxs
   cloud:
     config:
       uri: http://localhost:5000

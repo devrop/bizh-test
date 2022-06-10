@@ -1,4 +1,4 @@
-package ropandi.slot.entity;
+package ropandi.box.entity;
 
 import java.io.Serializable;
 
@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "mstslot")
+@Table(name = "mstbox")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Setter
 @Getter
-public class MstSlot implements Serializable {
+public class MstBox implements Serializable {
 
 	/**
 	 * 
@@ -29,11 +29,8 @@ public class MstSlot implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long slotCode;
-	private String slotName;
 	private Long boxCode;
 	private Long rackCode;
-	private Long slotCapacity;
-	private Long usedQty;
+	private String boxName;
 	
 }
