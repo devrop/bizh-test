@@ -1,16 +1,13 @@
-package ropandi.slot.model;
+package ropandi.slot.share.model;
 
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.Set;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ropandi.slot.entity.MstSlot;
 
 
 @AllArgsConstructor
@@ -18,19 +15,16 @@ import ropandi.slot.entity.MstSlot;
 @Builder
 @Setter
 @Getter
-public class SlotModel implements Serializable{
+public class RackModel implements Serializable{
 
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Long slotCode;
-	private String slotName;
-	private Long boxCode;
-	private String boxName;
 	private Long rackCode;
 	private String rackName;
-	private Long slotCapacity;
-	private Long usedQty;
+	
+	private Set<Long> rackCodes;
+	
+	
 }

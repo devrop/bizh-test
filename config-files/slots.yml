@@ -1,0 +1,25 @@
+server:
+  port: 50007
+  
+spring:
+  sleuth:
+    annotation:
+      enabled: true
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:slotdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password: 123
+  jpa:
+    hibernate:
+       ddl-auto: create     
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    statusPageUrlPath: /actuator/info
+    healthCheckUrlPath: /actuator/health      
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+boxs:
+  service: BOXS
