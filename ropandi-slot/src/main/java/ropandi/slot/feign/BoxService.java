@@ -7,7 +7,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec;
 
 import reactor.core.publisher.Mono;
-
 import ropandi.slot.infra.service.DiscoveryService;
 import ropandi.slot.share.model.BoxModel;
 @Service
@@ -32,4 +31,8 @@ public class BoxService implements IBoxService {
 		        ;
 	}
 
+	public Mono<BoxModel> buildEmpty(){
+	       return Mono.just(BoxModel.builder()
+	    		   .boxCode(0L).boxName("not exist").build()); //<-- evaluated as soon as read
+	}
 }

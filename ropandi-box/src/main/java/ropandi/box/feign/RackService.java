@@ -37,10 +37,14 @@ public class RackService implements IRackService {
 		        		.baseUrl(address + "/findById/"+ rackCode).build().get()))
 		        .map(RequestHeadersSpec::retrieve)
 		        .flatMap(eq -> eq.bodyToMono(RackModel.class)
-		        	)
+		        	).switchIfEmpty(buildEmpty())
 		        ;
 	}
 
+	Mono<RackModel> buildEmpty(){
+	       return Mono.just(RackModel.builder()
+	    		   .rackCode(0L).rackName("not exist").build()); //<-- evaluated as soon as read
+	}
 	@Override
 	public Mono<RackModel> findRackById(Set<Long> rackCodes) {
 		// TODO Auto-generated method stub
