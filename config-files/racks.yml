@@ -13,6 +13,9 @@ spring:
   jpa:
     hibernate:
        ddl-auto: create
+  sql:
+    init:
+      platform: hsqldb     
 eureka:
   client:
     serviceUrl:
