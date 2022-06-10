@@ -2,6 +2,7 @@ package ropandi.slot.feign;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec;
 
@@ -9,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 import ropandi.slot.infra.service.DiscoveryService;
 import ropandi.slot.share.model.BoxModel;
-
+@Service
 public class BoxService implements IBoxService {
 
 	@Autowired
