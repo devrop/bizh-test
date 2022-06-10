@@ -1,0 +1,51 @@
+server:
+  port: 8888
+
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+
+zuul:
+  routes:
+    racks:
+      path: /api/racks/**
+      sensitiveHeaders: 
+      serviceId: racks
+    boxs:
+      path: /api/boxs/**
+      sensitiveHeaders: 
+      serviceId: boxs
+    slots:
+      path: /api/slots/**
+      sensitiveHeaders: 
+      serviceId: fares
+    fillings:
+      path: /api/fillings/**
+      sensitiveHeaders: 
+      serviceId: fillings
+  host:
+    connectTimeoutMillis: 3000
+    socketTimeoutMillis: 3000
