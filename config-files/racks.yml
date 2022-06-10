@@ -6,7 +6,6 @@ spring:
     annotation:
       enabled: true
   datasource:
-    platform: hsqldb 
     driver-class-name: org.hsqldb.jdbc.JDBCDriver
     url: jdbc:hsqldb:mem:rackdb;DB_CLOSE_DELAY=-1
     username: sa
@@ -14,7 +13,10 @@ spring:
   jpa:
     hibernate:
        ddl-auto: update
-          
+  sql:
+   init:
+    schema-locations: classpath*:db/schema-hsqldb.sql
+    data-locations: classpath*:db/data-hsqldb.sql     
 eureka:
   client:
     serviceUrl:
