@@ -1,4 +1,4 @@
-package ropandi.auth.repo;
+package ropandi.auth.repository;
 
 import java.util.List;
 

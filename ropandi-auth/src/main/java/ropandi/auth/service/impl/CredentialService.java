@@ -11,8 +11,8 @@ import ropandi.auth.entity.Credential;
 import ropandi.auth.entity.Scope;
 import ropandi.auth.entity.ScopePK;
 import ropandi.auth.model.CredentialRequest;
-import ropandi.auth.repo.CredentialRepository;
-import ropandi.auth.repo.ScopeRepository;
+import ropandi.auth.repository.CredentialRepository;
+import ropandi.auth.repository.ScopeRepository;
 import ropandi.auth.service.ICredentialService;
 
 @Service

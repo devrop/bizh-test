@@ -16,14 +16,14 @@ spring:
    url: jdbc:hsqldb:mem:tkndb;DB_CLOSE_DELAY=-1
    username:sa
    password:1243
- jpa:
+  jpa:
    hibernate.ddl-auto:create
 
     
 security:
   basic:
     enabled: false
-oauth2:
+oauth:
    privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K    
     
   

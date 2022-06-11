@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 import ropandi.auth.entity.Credential;
 import ropandi.auth.model.CredentialData;
 import ropandi.auth.model.ScopeData;
-import ropandi.auth.repo.CredentialRepository;
-import ropandi.auth.repo.ScopeRepository;
+import ropandi.auth.repository.CredentialRepository;
+import ropandi.auth.repository.ScopeRepository;
 @Service
 public class CredentialsDetailsService implements UserDetailsService {
 

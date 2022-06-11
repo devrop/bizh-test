@@ -5,6 +5,7 @@ package ropandi.auth.entity;
 
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -13,9 +14,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import org.springframework.data.annotation.Id;
 @Builder
-@Table(name="Credential")
+@Table(name="credential")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
