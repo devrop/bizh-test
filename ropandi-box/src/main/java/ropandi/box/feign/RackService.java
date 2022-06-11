@@ -26,38 +26,38 @@ public class RackService implements IRackService {
 	private DiscoveryService discoveryService;
 	@Value("${racks.service}")
 	private String rackService;
+	/*
 	@Autowired
 	private ITokenService tokenService;
 	@Value("${racks.oauth.client_id}")
 	private String rackClientId;
 	@Value("${racks.oauth.client_secret}")
 	private String rackSecretId;
-	
+	*/
 	@Override
 	public Mono<RackModel> findRackById(Long rackCode) {
 		// TODO Auto-generated method stub
-		
+		/*
 		Credentials credentials = Credentials.builder()
 				.clientId(rackClientId)
 				.clientSecret(rackSecretId)
 				.build();
-		System.out.println("id1 " +rackClientId );
-		System.out.println("id1 " +rackSecretId );
-		System.out.println("call rack service " + rackService);
+		*/
 		return discoveryService.serviceAddressFor(this.rackService).next()
 		        .flatMap(address -> Mono.just(this.webClient
 		        		.mutate()
 		        		.baseUrl(address + "/findById/"+ rackCode).build().get()))
 		        
-		        .flatMap(requestHeadersUriSpec ->
+		        .
+		        /*flatMap(requestHeadersUriSpec ->
 	            Flux.combineLatest(Flux.just(requestHeadersUriSpec),Flux.from(tokenService.token(credentials)),(reqSpec, token) ->{
 	              System.out.println("token "+token.getToken());
 	            	reqSpec.header("Authorization","Bearer " + token.getToken());
 	              return reqSpec;
 	            })
-	                .next())
-		        
-		        .map(RequestHeadersSpec::retrieve)
+	                .next()).
+		        */
+		        map(RequestHeadersSpec::retrieve)
 		        .flatMap(eq -> eq.bodyToMono(RackModel.class)
 		        	).switchIfEmpty(buildEmpty())
 		        ;

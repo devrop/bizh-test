@@ -3,22 +3,22 @@ package ropandi.rack.oauth;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+//import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+//import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-@Configuration
+//@Configuration
 public class OAuthTokenConfiguration {
 
-  @Value("${oauth.privateKey}")
-  private String privateKey;
+  //@Value("${oauth.privateKey}")
+  //private String privateKey;
 
 
-  @Bean
+ /* @Bean
   public JwtTokenStore tokenStore() throws Exception {
     JwtAccessTokenConverter enhancer = new JwtAccessTokenConverter();
     enhancer.setSigningKey(privateKey);
     enhancer.afterPropertiesSet();
     return new JwtTokenStore(enhancer);
-  }
+  }*/
 
 }

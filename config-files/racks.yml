@@ -10,9 +10,6 @@ spring:
   jpa:
     hibernate:
        ddl-auto: update
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:7777/credential
   sql:
    init:
     schema-locations: classpath*:db/schema-hsqldb.sql
@@ -25,5 +22,3 @@ eureka:
     statusPageUrlPath: /actuator/info
     healthCheckUrlPath: /actuator/health      
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-oauth:
-  privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K

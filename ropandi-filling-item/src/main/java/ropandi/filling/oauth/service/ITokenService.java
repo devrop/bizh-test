@@ -6,5 +6,5 @@ import ropandi.filling.oauth.Credentials;
 
 public interface ITokenService {
 
-	public Mono<AccessToken> token(Credentials credentials);
+	//public Mono<AccessToken> token(Credentials credentials);
 }

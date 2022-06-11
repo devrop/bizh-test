@@ -15,9 +15,9 @@ import ropandi.box.infra.service.IDiscoveryService;
 import ropandi.box.oauth.AccessToken;
 import ropandi.box.oauth.Credentials;
 
-@Service
+//@Service
 public class TokenService implements ITokenService{
-
+/*
 	@Autowired
 	public IDiscoveryService discoveryService;
 	@Autowired
@@ -44,5 +44,5 @@ public class TokenService implements ITokenService{
 	        Mono.error(new RuntimeException("Error on server"))
 	    ).bodyToMono(AccessToken.class));
 	}
-
+*/
 }

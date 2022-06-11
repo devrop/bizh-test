@@ -23,34 +23,36 @@ public class SlotService implements ISlotService {
 	private DiscoveryService discoveryService;
 	@Value("${slots.service}")
 	private String slotService;
+	/*
 	@Autowired
 	private ITokenService tokenService;
 	@Value("${slots.oauth.client_id}")
 	private String slotClientId;
 	@Value("${slots.oauth.client_secret}")
 	private String slotSecretId;
-	
+	*/
 	
 	@Override
 	public Mono<SlotModel> findOneSlotById(Long slotCode) {
 		// TODO Auto-generated method stub
-		System.out.println("slot Code " + slotCode);
+		/*System.out.println("slot Code " + slotCode);
 		System.out.println("slotService " + slotService);
 		Credentials credentials = Credentials.builder()
 				.clientId(slotClientId)
 				.clientId(slotSecretId)
-				.build();
+				.build();*/
 		return discoveryService.serviceAddressFor(this.slotService).next()
 		        .flatMap(address -> Mono.just(this.webClient
 		        		.mutate()
 		        		.baseUrl(address + "/findById/"+ slotCode).build().get()))
-		        .flatMap(requestHeadersUriSpec ->
+		        /*.
+		        flatMap(requestHeadersUriSpec ->
 	            Flux.combineLatest(Flux.just(requestHeadersUriSpec),Flux.from(tokenService.token(credentials)),(reqSpec, token) ->{
 	              reqSpec.header("Authorization","Bearer" + token.getToken());
 	              return reqSpec;
 	            })
 	                .next())
-
+                */
 		        .map(RequestHeadersSpec::retrieve)
 		        .flatMap(eq -> eq.bodyToMono(SlotModel.class)
 		        	).switchIfEmpty(buildEmpty())
