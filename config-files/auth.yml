@@ -22,11 +22,11 @@ spring:
  jpa:
    hibernate.ddl-auto:create
 
-oauth2:
-    privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K
     
 security:
   basic:
     enabled: false
+oauth2:
+   privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K    
     
   
