@@ -18,7 +18,9 @@ public class AuthenticationService implements AuthenticationProvider {
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		// TODO Auto-generated method stub
 		String nickname = authentication.getName();
+		System.out.println("na,me "+ nickname);
 	    String password = (String) authentication.getCredentials();
+	    System.out.println("na,me "+ password);
 	    CredentialData credentialData = (CredentialData) credentialUserDetailsService.loadUserByUsername(nickname);
 	    if (Objects.isNull(credentialData) || !credentialData.getId().equalsIgnoreCase(nickname)) {
 	      throw new BadCredentialsException("email not found or invalid.");

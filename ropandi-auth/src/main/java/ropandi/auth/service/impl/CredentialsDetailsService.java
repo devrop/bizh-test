@@ -17,13 +17,13 @@ import ropandi.auth.model.CredentialData;
 import ropandi.auth.model.ScopeData;
 import ropandi.auth.repo.CredentialRepository;
 import ropandi.auth.repo.ScopeRepository;
-@Component
+@Service
 public class CredentialsDetailsService implements UserDetailsService {
 
-	//@Autowired
-	//private CredentialRepository credentialRepository;
-	//@Autowired
-	//private ScopeRepository scopeRepository;
+	@Autowired
+	private CredentialRepository credentialRepository;
+	@Autowired
+	private ScopeRepository scopeRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {

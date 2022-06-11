@@ -29,17 +29,16 @@ public class CredentialService implements ICredentialService {
 	@Override
 	public CredentialRequest newCredential(CredentialRequest credentialRequest) {
 		// TODO Auto-generated method stub
-
-		//scopeRepository.save(
-		//		Scope.builder().scopePK(ScopePK.builder().clientId(credentialRequest.getId()).scopeId("1").build())
-				//		.value("operator").build());
-
+;
+        /*
 		final Credential credential = Credential.builder().id(credentialRequest.getId())
 				.email(credentialRequest.getEmail()).name(credentialRequest.getName())
 				.password(this.passwordEncoder.encode(credentialRequest.getPassword())).build();
-		//this.credentialRepository.save(credential);
-
+		this.credentialRepository.save(credential);
+        this.scopeRepository.save(Scope.builder().scopePK(ScopePK.builder().clientId(credentialRequest.getId()).scopeId("operator").build()).value("Opeartor").build());
 		return credentialRequest;
+		*/
+       return null;
 	}
 
 }

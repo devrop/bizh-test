@@ -37,12 +37,14 @@ public class OAuth2AuthServer extends AuthorizationServerConfigurerAdapter {
 
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+	  System.out.println("disini b1");
     endpoints.authenticationManager(this.authenticationManager).approvalStoreDisabled()
         .tokenStore(this.tokenStore).accessTokenConverter(this.jwtAccessTokenConverter);
   }
 
   @Override
   public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
+	  System.out.println("disini 8");
     oauthServer.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
   }
 
