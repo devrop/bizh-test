@@ -71,7 +71,7 @@ public class OAuth2AuthServer extends AuthorizationServerConfigurerAdapter {
         .withClient("oldsuU1K1TutmCpFuYVj25GBfXkEcg") // rack microservice
         .secret("s1GtA6rAcns5dXQQXaNWV7GBNPtHALnS1vcZcRoxGwuf8TBotL")
         .authorizedGrantTypes("authorization_code", "refresh_token", "implicit",
-            "client_credentials")
+            "client_credentials","password")
         .authorities("operator")
         .scopes("trust")
         .accessTokenValiditySeconds(ONE_DAY)

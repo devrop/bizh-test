@@ -1,0 +1,113 @@
+
+1. Run project config
+
+2. Run project eureka
+
+3 Run gateway
+4 Run auth server
+5 Run rack project
+6 Run box project
+7 run slot project
+8 run filling project
+
+
+9 add user for get token
+
+url http://localhost:7777/register 
+sample body 
+{  "id" : "1","name":"rop", "email":"rop@gmail.com", "password" : "123"}
+
+
+10 get toke with clientId filling project = RYcZ68XqU9bnxuJef2QhQMoVXLrKBM
+
+http://localhost:7777/oauth/authorize?client_id=RYcZ68XqU9bnxuJef2QhQMoVXLrKBM&response
+_type=token&scope=trust&state=8777&redirect_uri=http://localhost:50009/swagger-ui.html
+login username = email, password = password
+
+
+access_token=
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTUwMjAyOTMsInVzZXJfbmFtZSI6InJvcEBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6WyJPcGVhcnRvciJdLCJqdGkiOiJkY2E2NGE3ZC0zMTEyLTQzYjItOWNmZS0xZGMwODVlNGYwNzIiLCJjbGllbnRfaWQiOiJSWWNaNjhYcVU5Ym54dUplZjJRaFFNb1ZYTHJLQk0iLCJzY29wZSI6WyJ0cnVzdCJdfQ.Bebf7g0FvftaOiMrGW32fa4rV-9nnaKPpv78_mP58gA
+&token_type=bearer&state=8777&expires_in=86399&jti=dca64a7d-3112-43b2-9cfe-1dc085e4f072
+
+11 create rack
+body 
+{
+	
+	"rackCode" : 1,
+	"rackName" : "Rack satu"
+}
+contentTtype = applications/json
+url http://localhost:8888/api/racks/save
+result 
+{
+    "status": 0,
+    "message": "OK",
+    "totalRecords": 0,
+    "contents": null
+}
+
+12. create box
+{
+  "boxCode": 1,
+  "boxName": "box 1",
+  "rackCode": 1
+}
+contentTtype = applications/json
+http://localhost:8888/api/boxs/save
+{
+    "status": 0,
+    "message": "OK",
+    "totalRecords": 0,
+    "contents": null
+}
+13. create slot
+body
+{
+  "slotCode": 2,
+  "slotName": "slot 2",
+  "boxCode": 1,
+  "rackCode": 1,
+  "slotCapacity": 10,
+  "usedQty": -1
+}
+contentTtype = applications/json
+14 create filling item
+{
+  "boxCode": 0,
+  "boxName": "string",
+  "details": [
+    {
+      "itemName": "item 1",
+      "trxNo": "string"
+    }
+  ],
+  "fillType": "string",
+  "qty": 1,
+  "rackCode": 0,
+  "rackName": "string",
+  "slotCode": 2,
+  "slotName": "string",
+  "trxName": "test 1",
+  "trxNo": "string"
+}
+
+15 set data created
+response
+{
+  "trxNo": "ijkqsxbjhn",
+  "trxName": "test 1",
+  "slotCode": 2,
+  "slotName": "slot 2",
+  "boxCode": 1,
+  "boxName": "box 1",
+  "rackCode": 1,
+  "rackName": "rack 1",
+  "qty": 1,
+  "fillType": "I",
+  "details": [
+    {
+      "trxNo": "ijkqsxbjhn",
+      "itemName": "item 1"
+    }
+  ]
+}

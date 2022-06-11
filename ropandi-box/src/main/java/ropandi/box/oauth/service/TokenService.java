@@ -30,8 +30,9 @@ public class TokenService implements ITokenService{
 	public Mono<AccessToken> token(Credentials credentials) {
 		// TODO Auto-generated method stub
 		final String authorizationHeader = Base64Utils.encodeToString((credentials.getClientId() + ":" + credentials.getClientSecret()).getBytes());
-	    return discoveryService.serviceAddressFor(this.authService).next().flatMap(address ->
-	        this.webClient.mutate().baseUrl(address + "/" + this.authServiceApiPath).build()
+	   System.out.println("basic " +authorizationHeader);
+		return discoveryService.serviceAddressFor(authService).next().flatMap(address ->
+	        webClient.mutate().baseUrl(address + "/" + authServiceApiPath).build()
 	        .post()
 	        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
 	        .header("Authorization","Basic " + authorizationHeader)

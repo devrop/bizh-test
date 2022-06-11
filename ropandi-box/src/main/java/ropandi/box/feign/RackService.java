@@ -36,10 +36,13 @@ public class RackService implements IRackService {
 	@Override
 	public Mono<RackModel> findRackById(Long rackCode) {
 		// TODO Auto-generated method stub
+		
 		Credentials credentials = Credentials.builder()
 				.clientId(rackClientId)
-				.clientId(rackSecretId)
+				.clientSecret(rackSecretId)
 				.build();
+		System.out.println("id1 " +rackClientId );
+		System.out.println("id1 " +rackSecretId );
 		System.out.println("call rack service " + rackService);
 		return discoveryService.serviceAddressFor(this.rackService).next()
 		        .flatMap(address -> Mono.just(this.webClient
@@ -48,7 +51,8 @@ public class RackService implements IRackService {
 		        
 		        .flatMap(requestHeadersUriSpec ->
 	            Flux.combineLatest(Flux.just(requestHeadersUriSpec),Flux.from(tokenService.token(credentials)),(reqSpec, token) ->{
-	              reqSpec.header("Authorization","Bearer" + token.getToken());
+	              System.out.println("token "+token.getToken());
+	            	reqSpec.header("Authorization","Bearer " + token.getToken());
 	              return reqSpec;
 	            })
 	                .next())
