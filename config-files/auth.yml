@@ -14,8 +14,8 @@ spring:
   datasource:
    driver-class-name: org.hsqldb.jdbc.JDBCDriver    
    url: jdbc:hsqldb:mem:tkndb;DB_CLOSE_DELAY=-1
-   username:sa
-   password:1243
+   username: sa
+   password: 1243
   jpa:
    hibernate.ddl-auto:create
 
