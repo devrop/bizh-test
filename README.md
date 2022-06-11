@@ -19,10 +19,10 @@ order of running project
 1 Run config project
 2 Run eureka project
 3 Run gateway project
-5 Run rack project
-6 Run box project
-7 Run slot project
-8 Run filling-item project
+4 Run rack project
+5 Run box project
+6 Run slot project
+7 Run filling-item project
 
 Test
 create rack
