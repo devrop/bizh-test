@@ -1,22 +1,21 @@
 server:
-  port: 50009
+  port: 50005
   
 spring:
+  sleuth:
+    annotation:
+      enabled: true
   datasource:
     driver-class-name: org.hsqldb.jdbc.JDBCDriver
-    url: jdbc:hsqldb:mem:rackdb;DB_CLOSE_DELAY=-1
+    url: jdbc:hsqldb:mem:filldb;DB_CLOSE_DELAY=-1
     username: sa
     password: 123
   jpa:
     hibernate:
-       ddl-auto: update
+       ddl-auto: create
   oauth2:
     resource:
-      userInfoUri: http://localhost:7777/credential
-  sql:
-   init:
-    schema-locations: classpath*:db/schema-hsqldb.sql
-    data-locations: classpath*:db/data-hsqldb.sql     
+      userInfoUri: http://localhost:7777/credential 
 eureka:
   client:
     serviceUrl:
@@ -25,5 +24,14 @@ eureka:
     statusPageUrlPath: /actuator/info
     healthCheckUrlPath: /actuator/health      
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+slots:
+  service: SLOTS
+  oauth:
+    client_id: jGjsbIwLzOimHoUAEamIaMqtmb6FXo
+    client_secret: ClWi4JbmO8pJ5UnHGKfqKyIkTqf4zaZOQ6UcYgUYbDG6Xo3JK0
+
+auth:
+  service: AUTH
+  path: /oauth/token
 oauth:
   privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K
