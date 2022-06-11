@@ -1,6 +1,6 @@
 package ropandi.box.feign;
 
-import static org.assertj.core.api.Assertions.catchThrowable;
+
 
 import java.util.Set;
 
@@ -11,9 +11,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.core.publisher.Mono;
 import ropandi.box.infra.service.DiscoveryService;
-import ropandi.box.share.model.BaseResponse;
 import ropandi.box.share.model.RackModel;
-import ropandi.box.share.model.RestResponse;
 
 import org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec;
 

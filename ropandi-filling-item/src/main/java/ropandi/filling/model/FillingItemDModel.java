@@ -16,11 +16,5 @@ import ropandi.filling.entity.TrxFillingItemDtl.TrxFillingItemDtlBuilder;
 public class FillingItemDModel {
 
 	private String trxNo;
-	private String slotCode;
-	private String slotName;
-	private String boxCode;
-	private String boxName;
-	private String rackCode;
-	private String rackName;
 	private String itemName;
 }

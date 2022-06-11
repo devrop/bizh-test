@@ -20,7 +20,6 @@ import lombok.Setter;
 public class TrxFillingItemDtl {
 	@Id
 	private String trxNo;
-	private String slotCode;
 	private String itemName;
 	
 	

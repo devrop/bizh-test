@@ -1,11 +1,15 @@
 package ropandi.slot.service.impl;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import reactor.core.publisher.Mono;
 
@@ -17,6 +21,7 @@ import ropandi.slot.service.ISlotService;
 import ropandi.slot.share.model.BoxModel;
 
 @Service
+@Transactional
 public class SlotService implements ISlotService {
     @Autowired
 	private SlotRepository slotRepository;
@@ -89,4 +94,35 @@ public class SlotService implements ISlotService {
 		
 	}
 
+	@Override
+	public Mono<SlotModel> updateSlotUsed(SlotModel model) {
+		// TODO Auto-generated method stub
+		try{
+		    slotRepository.updateSlotUsedQty(model.getUsedQty(), model.getSlotCode());
+			
+		return Mono.just(slotRepository.findById(model.getSlotCode()).get())
+				.flatMap(b ->  Mono.zip(Mono.just(b),boxService.findOneBox(b.getBoxCode())))
+				
+		        .flatMap(data -> {
+		        	final MstSlot ms = data.getT1();
+		        	final BoxModel mb = data.getT2();
+		        	SlotModel m = SlotModel.builder().slotCode(ms.getSlotCode())
+		        			.slotName(ms.getSlotName())
+		        			.slotCapacity(ms.getSlotCapacity())
+		        			.usedQty(ms.getUsedQty())
+		        			.boxCode(mb.getBoxCode())
+		        			.boxName(mb.getBoxName())
+		        			.rackCode(mb.getRackCode())
+		        			.rackName(mb.getRackName())
+		        			.build();
+		        	return Mono.just(m);
+		});
+		}catch(Exception e){
+			System.out.println("error " + e.getMessage());
+			return Mono.just(SlotModel.builder().slotCode(0L).build());
+		}
+	}
+
+	
+	
 }

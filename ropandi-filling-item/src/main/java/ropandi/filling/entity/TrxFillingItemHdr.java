@@ -22,6 +22,8 @@ public class TrxFillingItemHdr {
     @Id
 	private String trxNo;
 	private String trxName;
+	private String fillType;
+	private Long slotCode;
 	private Long qty;
 	
 }

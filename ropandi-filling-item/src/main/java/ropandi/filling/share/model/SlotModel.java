@@ -1,31 +1,35 @@
-package ropandi.filling.model;
+package ropandi.filling.share.model;
 
-import java.util.List;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ropandi.filling.entity.TrxFillingItemDtl;
-import ropandi.filling.entity.TrxFillingItemDtl.TrxFillingItemDtlBuilder;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Setter
 @Getter
-public class FillingItemHModel {
-	private String trxNo;
-	private String trxName;
+public class SlotModel implements Serializable{
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long slotCode;
 	private String slotName;
 	private Long boxCode;
 	private String boxName;
 	private Long rackCode;
 	private String rackName;
-	private Long qty;
-	private String fillType;
-	private List<FillingItemDModel> details;
-	
+	private Long slotCapacity;
+	private Long usedQty;
 }
