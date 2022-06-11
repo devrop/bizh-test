@@ -29,7 +29,8 @@ racks:
   oauth:
     client_id: oldsuU1K1TutmCpFuYVj25GBfXkEcg
     client_secret: s1GtA6rAcns5dXQQXaNWV7GBNPtHALnS1vcZcRoxGwuf8TBotL
-auth:
+
+auth: 
   service: AUTH
   path: /oauth/token
 oauth:
