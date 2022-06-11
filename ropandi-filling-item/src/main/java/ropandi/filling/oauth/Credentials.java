@@ -1,4 +1,4 @@
-package ropandi.slot.oauth.model;
+package ropandi.filling.oauth;
 
 
 import lombok.AllArgsConstructor;

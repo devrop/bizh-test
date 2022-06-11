@@ -13,6 +13,9 @@ spring:
   jpa:
     hibernate:
        ddl-auto: create
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:7777/credential 
 eureka:
   client:
     serviceUrl:
@@ -23,3 +26,12 @@ eureka:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 slots:
   service: SLOTS
+  oauth:
+    client_id: jGjsbIwLzOimHoUAEamIaMqtmb6FXo
+    client_secret: ClWi4JbmO8pJ5UnHGKfqKyIkTqf4zaZOQ6UcYgUYbDG6Xo3JK0
+
+auth:
+  service: AUTH
+  path: /oauth/token
+oauth:
+  privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K

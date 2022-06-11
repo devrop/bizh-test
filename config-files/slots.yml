@@ -12,7 +12,10 @@ spring:
     password: 123
   jpa:
     hibernate:
-       ddl-auto: create     
+       ddl-auto: create  
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:7777/credential       
 eureka:
   client:
     serviceUrl:
@@ -23,3 +26,11 @@ eureka:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 boxs:
   service: BOXS
+  oauth:
+    client_id: Me1DYrByT15BEKTPucRaA9rQV3TRre
+    client_secret: AkPEu1riMp6v7xcH2ANALrBECEayQTobOHeOdgZVpx3EbFNkuY
+auth:
+  service: AUTH
+  path: /oauth/token
+oauth:
+  privateKey: T439jLWJ6MpGa1OCAEoeMUF3B8dPKgOsr5DN8lUqthE8ltkoGWqndqbLogEg4dfMf0uRjtsDH6Ue3R0K

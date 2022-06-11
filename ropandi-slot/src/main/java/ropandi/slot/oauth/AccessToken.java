@@ -1,19 +1,8 @@
-package ropandi.slot.oauth.model;
-
+package ropandi.slot.oauth;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
-@Builder
+@Data
 public class AccessToken {
 
     @JsonProperty("access_token")

@@ -13,6 +13,9 @@ spring:
   jpa:
     hibernate:
        ddl-auto: update
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:7777/credential
   sql:
    init:
     schema-locations: classpath*:db/schema-hsqldb.sql
