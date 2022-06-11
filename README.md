@@ -43,7 +43,7 @@ result
     "contents": null
 }
 
-12. create box
+1). create box
 contentTtype = applications/json
 Method Post 
 {
@@ -60,7 +60,7 @@ http://localhost:8888/api/boxs/save
     "totalRecords": 0,
     "contents": null
 }
-13. create slot
+2). create slot
 body
 {
   "slotCode": 2,
@@ -72,7 +72,7 @@ body
 }
 contentTtype = applications/json
 Method Post 
-14 create filling item
+3) create filling item
 url http://localhost:8888/api/fillings/input
 contentTtype = applications/json
 Method Post 
@@ -95,7 +95,7 @@ Method Post
   "trxNo": "string"
 }
 
-15 get data detail created
+4) get data detail created
 url http://localhost:8888/api/fillings/detailTrx
 response
 {
