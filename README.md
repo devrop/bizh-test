@@ -27,6 +27,7 @@ order of running project
 Test
 create rack
 body 
+
 {
 	
 	"rackCode" : 1,
@@ -36,6 +37,7 @@ contentTtype = applications/json
 Method Post 
 url http://localhost:8888/api/racks/save
 result 
+
 {
     "status": 0,
     "message": "OK",
@@ -43,25 +45,31 @@ result
     "contents": null
 }
 
+
 1). create box
 contentTtype = applications/json
 Method Post 
+
 {
   "boxCode": 1,
   "boxName": "box 1",
   "rackCode": 1
 }
+
 contentTtype = applications/json
 Method Post 
 http://localhost:8888/api/boxs/save
+
 {
     "status": 0,
     "message": "OK",
     "totalRecords": 0,
     "contents": null
 }
+
 2). create slot
 body
+
 {
   "slotCode": 2,
   "slotName": "slot 2",
@@ -70,12 +78,14 @@ body
   "slotCapacity": 10,
   "usedQty": -1
 }
+
 contentTtype = applications/json
 Method Post 
 3) create filling item
 url http://localhost:8888/api/fillings/input
 contentTtype = applications/json
 Method Post 
+
 {
   "boxCode": 0,
   "boxName": "string",
