@@ -26,16 +26,17 @@ public class CredentialsDetailsService implements UserDetailsService {
 	private ScopeRepository scopeRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		final Credential credential = null;// this.credentialRepository.findOne(id);
-		final Set<ScopeData> scopeData = null; /*this.scopeRepository
-				.findByClientId(id)
+		System.out.println("data " + email);
+		final Credential credential = this.credentialRepository.findByEmail(email).get();
+		final Set<ScopeData> scopeData = this.scopeRepository
+				.findByClientId(credential.getId())
 				.stream().map(d-> {
 					return ScopeData.builder().id(d.getScopePK().getScopeId()).value(d.getValue()).build();
 					}).collect(Collectors.toSet());
 				
-		*/
+		
 		return CredentialData.builder()
 				.id(credential.getId())
 				.email(credential.getEmail()).password(credential.getPassword()).scopes(scopeData).build();

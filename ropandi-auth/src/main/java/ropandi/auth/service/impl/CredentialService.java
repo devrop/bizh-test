@@ -18,27 +18,26 @@ import ropandi.auth.service.ICredentialService;
 @Service
 public class CredentialService implements ICredentialService {
 
-	//@Autowired
-	//private CredentialRepository credentialRepository;
+	@Autowired
+	private CredentialRepository credentialRepository;
 
-	//@Autowired
-	//private ScopeRepository scopeRepository;
+	@Autowired
+	private ScopeRepository scopeRepository;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public CredentialRequest newCredential(CredentialRequest credentialRequest) {
 		// TODO Auto-generated method stub
-;
-        /*
+    System.out.println("Masuk suni");
+        
 		final Credential credential = Credential.builder().id(credentialRequest.getId())
 				.email(credentialRequest.getEmail()).name(credentialRequest.getName())
 				.password(this.passwordEncoder.encode(credentialRequest.getPassword())).build();
 		this.credentialRepository.save(credential);
         this.scopeRepository.save(Scope.builder().scopePK(ScopePK.builder().clientId(credentialRequest.getId()).scopeId("operator").build()).value("Opeartor").build());
 		return credentialRequest;
-		*/
-       return null;
+		
 	}
 
 }
